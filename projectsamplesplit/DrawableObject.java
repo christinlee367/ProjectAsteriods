@@ -13,6 +13,8 @@ public abstract class DrawableObject
    private float x;
    private float y;
    private float speedX, speedY;
+   private boolean playerMovingToNewGrid;
+   private boolean distanceIncreased = false;
    
    //takes the position of the player and calls draw me with appropriate positions
    public void draw(float playerx, float playery, GraphicsContext gc, boolean isPlayer)
@@ -80,9 +82,18 @@ public abstract class DrawableObject
          speedY = -5;
       }
       
+      int prevXSquare = (int)x/100;
+      int prevYSquare = (int)y/100;
+
    // turn constant speed into variable speed
       x += speedX;
       y += speedY;
+      
+      int currXSquare = (int)x/100;
+      int currYSquare = (int)y/100;
+      if (prevXSquare != currXSquare || prevYSquare!= currYSquare)
+         playerMovingToNewGrid = true;
+   
    }
    
    public float getX(){
@@ -92,6 +103,13 @@ public abstract class DrawableObject
    public void setX(float x_){x = x_;}
    public void setY(float y_){y = y_;}
    
+   public boolean playerMovingToNewGrid() {
+      if (playerMovingToNewGrid) {
+         playerMovingToNewGrid = false;
+         return true;
+      }
+      return false;
+   }
    public double distance(DrawableObject other)
    {
       return (Math.sqrt((other.x-x)*(other.x-x) +  (other.y-y)*(other.y-y)   ));
