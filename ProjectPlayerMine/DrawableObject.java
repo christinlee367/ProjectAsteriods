@@ -27,7 +27,6 @@ public abstract class DrawableObject
    }
    
    //this method you implement for each object you want to draw. Act as if the thing you want to draw is at x,y.
-   //NOTE: DO NOT CALL DRAWME YOURSELF. Let the the "draw" method do it for you. I take care of the math in that method for a reason.
    public abstract void drawMe(float x, float y, GraphicsContext gc);
    public void act(boolean left, boolean right, boolean down, boolean up)
    {
@@ -88,10 +87,10 @@ public abstract class DrawableObject
    // turn constant speed into variable speed
       x += speedX;
       y += speedY;
-      
+   // if the current square does not match the previous square, then the mines are allowed to generate    
       int currXSquare = (int)x/100;
       int currYSquare = (int)y/100;
-      if (prevXSquare != currXSquare || prevYSquare!= currYSquare)
+      if (prevXSquare != currXSquare || prevYSquare != currYSquare)
          playerMovingToNewGrid = true;
    
    }

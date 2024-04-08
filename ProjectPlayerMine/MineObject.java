@@ -34,7 +34,6 @@ public class MineObject extends DrawableObject
    public void drawMe(float x, float y, GraphicsContext gc)
    {
          // oscillate between two colors
-      
       gc.setFill(Color.WHITE.interpolate(Color.RED, colorValue));
       gc.fillOval(x, y, 10,10);
    }
