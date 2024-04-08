@@ -16,5 +16,9 @@ public class TestObject extends DrawableObject
       gc.fillOval(x-14,y-14,27,27);
       gc.setFill(Color.GRAY);
       gc.fillOval(x-13,y-13,25,25);
+      gc.setFill(Color.BLACK);
+      gc.fillOval(x-4,y-4,8,8);
+      gc.setFill(Color.GREEN);
+      gc.fillOval(x-3,y-3,6,6);
    }
 }
