@@ -1,0 +1,10 @@
+DrawableObject
+- controls the functionality of the player
+- connects to the keyboard listener
+- defines the location of the player
+TestObject
+- defines the initial appearance of the player
+MineObject
+- define the initial appearance of the mines including the interpolation of the colors
+Main
+- has file functionality 
