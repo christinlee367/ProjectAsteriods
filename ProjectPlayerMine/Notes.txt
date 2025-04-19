@@ -8,3 +8,6 @@ MineObject
 - define the initial appearance of the mines including the interpolation of the colors
 Main
 - has file functionality 
+- background functionality
+- keyboard functionality
+- populating mine functionality
